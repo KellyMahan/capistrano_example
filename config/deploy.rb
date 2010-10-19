@@ -9,9 +9,11 @@ set :scm, :git
 set :branch, "master"
 set :repository,  "git://github.com/KellyMahan/capistrano_example.git"
 
+set :rake, "/usr/local/rvm/gems/ruby-1.9.2-p0/bin/rake"
+#default_environment["PATH"] = "/usr/local/rvm/rubies/ruby-1.9.2-p0/bin/ruby:/usr/local/bin:./"
 
 role :app, "192.168.1.54" # This may be the same as your `Web` server
-#role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
+role :db,  "192.168.1.54", :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
 
